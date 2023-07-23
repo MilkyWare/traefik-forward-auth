@@ -9,7 +9,7 @@ RUN apk add --no-cache git
 
 # Copy & build
 ADD . /go/src/github.com/mesosphere/traefik-forward-auth/
-RUN CGO_ENABLED=0 GOOS=linux GO111MODULE=on go build -a -installsuffix nocgo -o /traefik-forward-auth github.com/mesosphere/traefik-forward-auth/cmd
+RUN CGO_ENABLED=0 GO111MODULE=on go build -a -installsuffix nocgo -o /traefik-forward-auth github.com/mesosphere/traefik-forward-auth/cmd
 
 # Copy into scratch container
 FROM scratch
