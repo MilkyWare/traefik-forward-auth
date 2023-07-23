@@ -90,6 +90,8 @@ jobs:
           push: true
           labels: ${{steps.docker-metadata.outputs.labels}}
           tags: ${{steps.docker-metadata.outputs.tags}}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           
       - name: Docker Hub Description
         id: docker-description
